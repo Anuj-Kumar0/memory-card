@@ -1,9 +1,9 @@
-import { React, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const api = "https://pokeapi.co/api/v2/pokemon?limit=10";
+const api = "https://pokeapi.co/api/v2/pokemon?limit=48";
 
 export function useImages() {
-  const [pokemons, setPokemons] = useState(0);
+  const [pokemons, setPokemons] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -18,8 +18,14 @@ export function useImages() {
             fetch(pokemon.url).then((res) => res.json())
           )
         );
-        console.log(pokemonDetails);
-        setPokemons(pokemonDetails);
+
+        const pokemonData = pokemonDetails.map((pokemon) => ({
+          id: pokemon.id,
+          name: pokemon.name,
+          image: pokemon.sprites.other["official-artwork"].front_default,
+        }));
+
+        setPokemons(pokemonData);
       } catch (error) {
         console.log("Error:", error);
         setError(error);
