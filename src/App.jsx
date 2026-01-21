@@ -21,6 +21,15 @@ if(error){
   return <p>An Error was occurred!</p>
 }
 
+useEffect(() => {
+  if (score >= 15) {
+    alert("You Win!");
+    setScore(0);
+    setClickedPokemons([]);
+    setShuffledPokemons(shuffleCards(pokemons));
+  }
+}, [score, pokemons]);
+
 if(pokemons.length === 0){
   return <p className="status-text">Loading Pokemons...</p>
 }
@@ -47,6 +56,7 @@ function handleClick(pokemonId){
   } else {
     setScore(0);
     setClickedPokemons([]);
+    setShuffledPokemons(shuffleCards(shuffledPokemons));
   }
   
   setShuffledPokemons((prevPokemons) => shuffleCards(prevPokemons));
