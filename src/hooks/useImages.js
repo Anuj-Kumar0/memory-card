@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const api = "https://pokeapi.co/api/v2/pokemon?limit=48";
+const api = "https://pokeapi.co/api/v2/pokemon?limit=16";
 
 export function useImages() {
   const [pokemons, setPokemons] = useState([]);
