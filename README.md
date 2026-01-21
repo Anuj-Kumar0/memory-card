@@ -1,17 +1,70 @@
-# React + Vite
+Pokémon Memory Card Game:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun and interactive memory card game built with React.
+Test your memory by clicking on Pokémon cards — but don’t click the same card twice!
 
-Currently, two official plugins are available:
+This project uses the PokéAPI to fetch real Pokémon data and images dynamically.
+Cards are shuffled using the Fisher–Yates algorithm, ensuring an unbiased and efficient shuffle after every move.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Live Demo:
 
-## React Compiler
+Built With:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1)React (Hooks)
+2)JavaScript (ES6+)
+3)CSS
+4)PokéAPI
 
-## Expanding the ESLint configuration
+How to Play:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# memory-card
+1)The game starts with a grid of Pokémon cards.
+2)Click on a Pokémon card to earn 1 point.
+3)After every click, all cards are shuffled.
+4)Do not click the same Pokémon more than once.
+5)Clicking a Pokémon you’ve already clicked will reset your score to 0.
+6)Your High Score is saved and updated whenever you beat it.
+
+Win Condition:
+
+Click 15 unique Pokémon cards without repeating any.
+When you win, the game resets and you can try again!
+
+Scoring System:
+
+1)Correct (new Pokémon): +1 point
+2)Repeated Pokémon: Score resets to 0
+3)High Score: Tracks your best performance
+
+Features:
+
+1)Dynamic Pokémon data from PokéAPI
+2)Card shuffle after every click
+3)Score and High Score tracking
+4)Win detection and game reset
+5)Responsive layout
+
+API Used:
+
+PokéAPI
+– Pokémon data and official artwork
+
+What I Learned:
+
+1)Working with React hooks (useState, useEffect)
+2)Creating custom hooks
+3)Managing game state
+4)Handling side effects properly in React
+5)Fetching and transforming API data
+
+Future Improvements
+
+1)Difficulty levels
+2)Timer mode
+3)Sound effects
+4)Mobile animations
+5)Leaderboard
+
+Author:
+
+Anuj Kumar
+GitHub: https://github.com/Anuj-Kumar0
