@@ -117,3 +117,69 @@ h2 {
     height: 140px;
   }
 }
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shuffleJump {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08) rotate(2deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes wrongShake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes scorePop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+    color: #ffcb05;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pokemon-card {
+  animation: cardEnter 0.6s ease both;
+}
+
+.pokemon-card.shuffle {
+  animation: shuffleJump 0.4s ease;
+}
+
+.pokemon-card.wrong {
+  animation: wrongShake 0.4s ease;
+}
+
+.pokemon-card:active {
+  transform: scale(0.95);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.score-pop {
+  animation: scorePop 0.4s ease;
+}
+
